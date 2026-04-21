@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radium Lab | Solo Indie Game Dev</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="logo.png" alt="Radium Lab Logo" class="site-logo">
+            </div>
+            
+            <div class="nav-right">
+                <div class="language-switcher">
+                    <span onclick="setLanguage('en')" title="English">🇺🇸</span>
+                    <span onclick="setLanguage('uk')" title="Українська">🇺🇦</span>
+                    <span onclick="setLanguage('jp')" title="Japanese">🇯🇵</span>
+                    <span onclick="setLanguage('pl')" title="Polish">🇵🇱</span>
+                </div>
+                <ul>
+                    <li><a href="#about" data-key="nav-about">About</a></li>
+                    <li><a href="#projects" data-key="nav-games">Games</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1 data-key="hero-title">Building Worlds Solo</h1>
+        <p data-key="hero-desc">Radium Lab is an independent solo game development studio driven by passion, atmosphere, and code.</p>
+        <a href="#projects" class="btn btn-neon" data-key="hero-btn">Explore Games</a>
+    </section>
+
+    <section id="about" class="container dark-section">
+        <h2 data-key="about-title">The Developer</h2>
+        <div class="about-text">
+            <p data-key="about-p1">Hi! I am Eduard, the founder and sole developer behind Radium Lab. I believe in the power of indie games where ideas and atmosphere outweigh big budgets.</p>
+            <p data-key="about-p2">From design and coding to art and sound—I handle every aspect of development to ensure each project carries my personal signature.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 data-key="games-title">My Projects</h2>
+        <div class="project-list" id="project-list">
+            </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Radium Lab | Developed by Eduard.</p>
+    </footer>
+
+    <script>
+        const translations = {
+            'en': {
+                'nav-about': 'About', 'nav-games': 'Games',
+                'hero-title': 'Building Worlds Solo',
+                'hero-desc': 'Radium Lab is an independent solo game development studio driven by passion and code.',
+                'hero-btn': 'Explore Games',
+                'about-title': 'The Developer',
+                'about-p1': 'Hi! I am the founder and sole developer behind Radium Lab.',
+                'about-p2': 'I handle every aspect of development to ensure each project carries my personal signature.',
+                'games-title': 'My Projects',
+                'games': [
+                    { title: 'Cube Snake', teaser: '3D snake arcade for Android.', desc: 'Exciting 3D space snake with simple one-finger controls. Grow by collecting cubes, avoid walls and your tail.' },
+                    { title: 'Anomaly 2:22', teaser: 'Psychological horror in the subway.', desc: 'Reality warps at 2:22 AM. Navigate liminal spaces and report anomalies to survive the nightmare.' },
+                    { title: 'Drift Havoc', teaser: 'Open-map drifting freedom.', desc: 'Perform spectacular drifts, collect coins, and customize your car on a vast open map.' },
+                    { title: 'Geometry Run 3D', teaser: 'Fast-paced geometric adventure.', desc: 'Avoid obstacles and unlock levels in a dynamic 3D geometric world.' }
+                ]
+            },
+            'uk': {
+                'nav-about': 'Про мене', 'nav-games': 'Ігри',
+                'hero-title': 'Створюю світи самотужки',
+                'hero-desc': 'Radium Lab — це соло інді-студія, де кожен рядок коду створено з пристрастю.',
+                'hero-btn': 'Дивитись ігри',
+                'about-title': 'Розробник',
+                'about-p1': 'Вітаю! Я засновник та єдиний розробник Radium Lab.',
+                'about-p2': 'Від коду до арту — я роблю все сам, щоб кожна гра мала свій характер.',
+                'games-title': 'Мої проєкти',
+                'games': [
+                    { title: 'Cube Snake', teaser: '3D аркада для Android.', desc: 'Захоплююча змійка у 3D просторі з простим керуванням одним пальцем. Збирай куби, уникай стін.' },
+                    { title: 'Anomaly 2:22', teaser: 'Психологічний хорор у метро.', desc: 'Реальність змінюється о 2:22. Досліджуй лімінальні простори та звітуй про аномалії.' },
+                    { title: 'Drift Havoc', teaser: 'Свобода дрифту на відкритій мапі.', desc: 'Виконуй круті заноси, збирай монети та кастомізуй своє авто.' },
+                    { title: 'Geometry Run 3D', teaser: 'Динамічна геометрична пригода.', desc: 'Уникай перешкод та відкривай рівні у яскравому 3D світі.' }
+                ]
+            },
+            'jp': {
+                'nav-about': '自己紹介', 'nav-games': 'ゲーム',
+                'hero-title': '独りで世界を創る',
+                'hero-desc': 'Radium Labは、情熱とコードによって動かされるインディーゲームスタジオです。',
+                'hero-btn': 'ゲームを見る',
+                'about-title': '開発者',
+                'about-p1': 'こんにちは！Radium Labの創設者兼唯一の開発者です。',
+                'about-p2': 'デザインからコーディングまで、すべてを自分で行っています。',
+                'games-title': 'プロジェクト',
+                'games': [
+                    { title: 'Cube Snake', teaser: 'Android向けの3Dスネークアーケード。', desc: '指一本で操作できるエキサイティングな3Dスネークゲーム。' },
+                    { title: 'Anomaly 2:22', teaser: '地下鉄のサイコロジカルホラー。', desc: '午前2時22分、現実が歪む。異常を報告し、生き残れ。' },
+                    { title: 'Drift Havoc', teaser: 'オープンマップのドリフト。', desc: '広大なマップでドリフトを楽しみ、車をカスタマイズしましょう。' },
+                    { title: 'Geometry Run 3D', teaser: '幾何学世界のランアクション。', desc: '障害物を避け、新しいレベルをアンロックしましょう。' }
+                ]
+            },
+            'pl': {
+                'nav-about': 'O mnie', 'nav-games': 'Gry',
+                'hero-title': 'Buduję światy solo',
+                'hero-desc': 'Radium Lab to niezależne studio gier, napędzane pasją i kodem.',
+                'hero-btn': 'Zobacz gry',
+                'about-title': 'Deweloper',
+                'about-p1': 'Cześć! Jestem założycielem i jedynym twórcą Radium Lab.',
+                'about-p2': 'Zajmuję się wszystkim — od kodu po grafikę, aby każda gra była wyjątkowa.',
+                'games-title': 'Moje projekty',
+                'games': [
+                    { title: 'Cube Snake', teaser: 'Zręcznościówka 3D na Androida.', desc: 'Ekscytujący wąż 3D z prostym sterowaniem jednym palcem.' },
+                    { title: 'Anomaly 2:22', teaser: 'Horror psychologiczny w metrze.', desc: 'O 2:22 rzeczywistość się zmienia. Przetrwaj koszmar w metrze.' },
+                    { title: 'Drift Havoc', teaser: 'Dryfowanie na otwartej mapie.', desc: 'Wykonuj spektakularne drifty i ulepszaj swój samochód.' },
+                    { title: 'Geometry Run 3D', teaser: 'Geometryczna przygoda 3D.', desc: 'Unikaj przeszkód i odblokowuj nowe poziomy.' }
+                ]
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-key]').forEach(elem => {
+                const key = elem.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    elem.innerText = translations[lang][key];
+                }
+            });
+
+            const projectList = document.getElementById('project-list');
+            projectList.innerHTML = '';
+            translations[lang].games.forEach(game => {
+                projectList.innerHTML += `
+                    <details class="project-card">
+                        <summary>
+                            <h3>${game.title}</h3>
+                            <p class="teaser">${game.teaser}</p>
+                            <span class="icon">▾</span>
+                        </summary>
+                        <div class="card-content">
+                            <p>${game.desc}</p>
+                        </div>
+                    </details>
+                `;
+            });
+        }
+        setLanguage('en'); // Мова при завантаженні
+    </script>
+</body>
+</html>
