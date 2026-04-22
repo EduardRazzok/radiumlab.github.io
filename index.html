@@ -1,53 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Radium Lab | Solo Indie Game Dev</title>
+    <title>Radium Lab | Solo Indie Dev</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="wave-bg"></div>
+
     <header>
+        <div class="lang-bar">
+            <div class="lang-switcher">
+                <span class="toggle-bg" id="toggle-indicator"></span>
+                <span class="flag" onclick="setLanguage('en')">🇺🇸</span>
+                <span class="flag" onclick="setLanguage('uk')">🇺🇦</span>
+            </div>
+        </div>
         <nav>
-            <div class="logo-container">
-                <img src="logo.jpg" alt="Radium Lab Logo" class="site-logo">
+            <div class="logo-box">
+                <img src="logo.jpg" alt="Radium Lab" class="site-logo">
             </div>
-            
-            <div class="nav-right">
-                <div class="language-switcher">
-                    <span onclick="setLanguage('en')" title="English">🇺🇸</span>
-                    <span onclick="setLanguage('uk')" title="Українська">🇺🇦</span>
-                    <span onclick="setLanguage('jp')" title="Japanese">🇯🇵</span>
-                    <span onclick="setLanguage('pl')" title="Polish">🇵🇱</span>
-                </div>
-                <ul>
-                    <li><a href="#about" data-key="nav-about">About</a></li>
-                    <li><a href="#projects" data-key="nav-games">Games</a></li>
-                </ul>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#projects" data-key="nav-games">Ігри</a></li>
+                <li><a href="#about" data-key="nav-about">Про мене</a></li>
+            </ul>
         </nav>
     </header>
 
     <section class="hero">
-        <h1 data-key="hero-title">Building Worlds Solo</h1>
-        <p data-key="hero-desc">Radium Lab is an independent solo game development studio driven by passion, atmosphere, and code.</p>
-        <a href="#projects" class="btn btn-neon" data-key="hero-btn">Explore Games</a>
-    </section>
-
-    <section id="about" class="container dark-section">
-        <h2 data-key="about-title">The Developer</h2>
-        <div class="about-text">
-            <p data-key="about-p1">Hi! I am Eduard, the founder and sole developer behind Radium Lab. I believe in the power of indie games where ideas and atmosphere outweigh big budgets.</p>
-            <p data-key="about-p2">From design and coding to art and sound—I handle every aspect of development to ensure each project carries my personal signature.</p>
-        </div>
+        <h1 data-key="hero-title">Створюю світи самотужки</h1>
+        <p data-key="hero-desc">Radium Lab — це соло інді-студія, де кожен рядок коду створено з пристрастю.</p>
+        <a href="#projects" class="btn-neon" data-key="hero-btn">Дивитись ігри</a>
     </section>
 
     <section id="projects" class="container">
-        <h2 data-key="games-title">My Projects</h2>
-        <div class="project-list" id="project-list">
+        <h2 class="red-title" data-key="games-title">МОЇ ПРОЄКТИ</h2>
+        <div id="project-list" class="list-wrapper"></div>
+    </section>
+
+    <section id="about" class="container">
+        <div class="ua-card">
+            <h2 class="red-title" data-key="about-title">The Developer</h2>
+            <div class="about-content">
+                <p data-key="about-p1">Hi! I am Eduard, the founder and sole developer behind Radium Lab.</p>
+                <p data-key="about-p2">I handle every aspect of development to ensure each project carries my personal signature.</p>
+                <div class="divider"></div>
+                <p data-key="about-custom">Radium Lab — український інді розробник, працюю над проектами сам та по ходу їх створення навчаюсь чомусь новому, сам я молодий хлопець.</p>
             </div>
+        </div>
     </section>
 
     <footer>
@@ -59,17 +62,19 @@
             'en': {
                 'nav-about': 'About', 'nav-games': 'Games',
                 'hero-title': 'Building Worlds Solo',
-                'hero-desc': 'Radium Lab is an independent solo game development studio driven by passion and code.',
+                'hero-desc': 'Independent solo game development studio.',
                 'hero-btn': 'Explore Games',
                 'about-title': 'The Developer',
-                'about-p1': 'Hi! I am the founder and sole developer behind Radium Lab.',
-                'about-p2': 'I handle every aspect of development to ensure each project carries my personal signature.',
-                'games-title': 'My Projects',
+                'about-p1': 'Hi! I am Eduard, the founder of Radium Lab.',
+                'about-p2': 'I handle every aspect of development to ensure a personal signature.',
+                'about-custom': 'Radium Lab is a Ukrainian indie developer. I work solo and learn as I go. Just a young guy with a passion.',
+                'games-title': 'MY PROJECTS',
+                'play-btn': 'Play Game →',
                 'games': [
-                    { title: 'Cube Snake', teaser: '3D snake arcade for Android.', desc: 'Exciting 3D space snake with simple one-finger controls. Grow by collecting cubes, avoid walls and your tail.' },
-                    { title: 'Anomaly 2:22', teaser: 'Psychological horror in the subway.', desc: 'Reality warps at 2:22 AM. Navigate liminal spaces and report anomalies to survive the nightmare.' },
-                    { title: 'Drift Havoc', teaser: 'Open-map drifting freedom.', desc: 'Perform spectacular drifts, collect coins, and customize your car on a vast open map.' },
-                    { title: 'Geometry Run 3D', teaser: 'Fast-paced geometric adventure.', desc: 'Avoid obstacles and unlock levels in a dynamic 3D geometric world.' }
+                    { title: 'Cube Snake', img: 'cube_snake.jpg', url: 'https://play.google.com/store/apps/details?id=com.FOXGamesDLL.CubesSnake&hl=uk', teaser: '3D arcade for Android.', desc: 'Classic snake in a modern 3D world. Collect cubes and survive.' },
+                    { title: 'Anomaly 2:22', img: 'anomaly.jpg', url: 'https://play.google.com/store/apps/details?id=com.RadiumLab.Anomaly222', teaser: 'Psychological horror.', desc: 'Reality warps in the subway. Find the exit and report anomalies.' },
+                    { title: 'Drift Havoc', img: 'drift.jpg', url: 'https://play.google.com/store/apps/details?id=com.TryzubInteractive.DriftsHavoc&hl=uk', teaser: 'Open world racing.', desc: 'Master your drift and customize cars in a massive open world.' },
+                    { title: 'Geometry Run 3D', img: 'geometry.jpg', url: 'https://play.google.com/store/apps/details?id=com.FOXGamesDLL.GeometryRun3D', teaser: 'Fast-paced action.', desc: 'Survive the geometric chaos in this high-speed 3D challenge.' }
                 ]
             },
             'uk': {
@@ -78,76 +83,53 @@
                 'hero-desc': 'Radium Lab — це соло інді-студія, де кожен рядок коду створено з пристрастю.',
                 'hero-btn': 'Дивитись ігри',
                 'about-title': 'Розробник',
-                'about-p1': 'Вітаю! Я засновник та єдиний розробник Radium Lab.',
-                'about-p2': 'Від коду до арту — я роблю все сам, щоб кожна гра мала свій характер.',
-                'games-title': 'Мої проєкти',
+                'about-p1': 'Привіт! Я Едуард, засновник Radium Lab.',
+                'about-p2': 'Я займаюсь усім: від коду до дизайну, щоб кожна гра була особливою.',
+                'about-custom': 'Radium Lab — український інді розробник, працюю над проектами сам та по ходу їх створення навчаюсь чомусь новому, сам я молодий хлопець.',
+                'games-title': 'МОЇ ПРОЄКТИ',
+                'play-btn': 'Перейти до гри →',
                 'games': [
-                    { title: 'Cube Snake', teaser: '3D аркада для Android.', desc: 'Захоплююча змійка у 3D просторі з простим керуванням одним пальцем. Збирай куби, уникай стін.' },
-                    { title: 'Anomaly 2:22', teaser: 'Психологічний хорор у метро.', desc: 'Реальність змінюється о 2:22. Досліджуй лімінальні простори та звітуй про аномалії.' },
-                    { title: 'Drift Havoc', teaser: 'Свобода дрифту на відкритій мапі.', desc: 'Виконуй круті заноси, збирай монети та кастомізуй своє авто.' },
-                    { title: 'Geometry Run 3D', teaser: 'Динамічна геометрична пригода.', desc: 'Уникай перешкод та відкривай рівні у яскравому 3D світі.' }
-                ]
-            },
-            'jp': {
-                'nav-about': '自己紹介', 'nav-games': 'ゲーム',
-                'hero-title': '独りで世界を創る',
-                'hero-desc': 'Radium Labは、情熱とコードによって動かされるインディーゲームスタジオです。',
-                'hero-btn': 'ゲームを見る',
-                'about-title': '開発者',
-                'about-p1': 'こんにちは！Radium Labの創設者兼唯一の開発者です。',
-                'about-p2': 'デザインからコーディングまで、すべてを自分で行っています。',
-                'games-title': 'プロジェクト',
-                'games': [
-                    { title: 'Cube Snake', teaser: 'Android向けの3Dスネークアーケード。', desc: '指一本で操作できるエキサイティングな3Dスネークゲーム。' },
-                    { title: 'Anomaly 2:22', teaser: '地下鉄のサイコロジカルホラー。', desc: '午前2時22分、現実が歪む。異常を報告し、生き残れ。' },
-                    { title: 'Drift Havoc', teaser: 'オープンマップのドリフト。', desc: '広大なマップでドリフトを楽しみ、車をカスタマイズしましょう。' },
-                    { title: 'Geometry Run 3D', teaser: '幾何学世界のランアクション。', desc: '障害物を避け、新しいレベルをアンロックしましょう。' }
-                ]
-            },
-            'pl': {
-                'nav-about': 'O mnie', 'nav-games': 'Gry',
-                'hero-title': 'Buduję światy solo',
-                'hero-desc': 'Radium Lab to niezależne studio gier, napędzane pasją i kodem.',
-                'hero-btn': 'Zobacz gry',
-                'about-title': 'Deweloper',
-                'about-p1': 'Cześć! Jestem założycielem i jedynym twórcą Radium Lab.',
-                'about-p2': 'Zajmuję się wszystkim — od kodu po grafikę, aby każda gra była wyjątkowa.',
-                'games-title': 'Moje projekty',
-                'games': [
-                    { title: 'Cube Snake', teaser: 'Zręcznościówka 3D na Androida.', desc: 'Ekscytujący wąż 3D z prostym sterowaniem jednym palcem.' },
-                    { title: 'Anomaly 2:22', teaser: 'Horror psychologiczny w metrze.', desc: 'O 2:22 rzeczywistość się zmienia. Przetrwaj koszmar w metrze.' },
-                    { title: 'Drift Havoc', teaser: 'Dryfowanie na otwartej mapie.', desc: 'Wykonuj spektakularne drifty i ulepszaj swój samochód.' },
-                    { title: 'Geometry Run 3D', teaser: 'Geometryczna przygoda 3D.', desc: 'Unikaj przeszkód i odblokowuj nowe poziomy.' }
+                    { title: 'Cube Snake', img: 'cube_snake.jpg', url: 'https://play.google.com/store/apps/details?id=com.FOXGamesDLL.CubesSnake&hl=uk', teaser: '3D аркада для Android.', desc: 'Захоплююча змійка у 3D просторі. Збирай куби та уникай стін.' },
+                    { title: 'Anomaly 2:22', img: 'anomaly.jpg', url: 'https://play.google.com/store/apps/details?id=com.RadiumLab.Anomaly222', teaser: 'Психологічний хорор.', desc: 'Реальність змінюється о 2:22. Досліджуй лімінальні простори.' },
+                    { title: 'Drift Havoc', img: 'drift.jpg', url: 'https://play.google.com/store/apps/details?id=com.TryzubInteractive.DriftsHavoc&hl=uk', teaser: 'Дрифт у відкритому світі.', desc: 'Виконуй круті заноси та кастомізуй своє авто на величезній мапі.' },
+                    { title: 'Geometry Run 3D', img: 'geometry.jpg', url: 'https://play.google.com/store/apps/details?id=com.FOXGamesDLL.GeometryRun3D', teaser: 'Динамічна пригода.', desc: 'Уникай складних перешкод у яскравому 3D світі.' }
                 ]
             }
         };
 
         function setLanguage(lang) {
-            document.querySelectorAll('[data-key]').forEach(elem => {
-                const key = elem.getAttribute('data-key');
-                if (translations[lang][key]) {
-                    elem.innerText = translations[lang][key];
-                }
+            // Анімація перемикача
+            const indicator = document.getElementById('toggle-indicator');
+            indicator.style.left = (lang === 'uk') ? '50px' : '4px';
+
+            // Переклад тексту
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if (translations[lang][key]) el.innerText = translations[lang][key];
             });
 
-            const projectList = document.getElementById('project-list');
-            projectList.innerHTML = '';
+            // Список ігор
+            const list = document.getElementById('project-list');
+            list.innerHTML = '';
             translations[lang].games.forEach(game => {
-                projectList.innerHTML += `
-                    <details class="project-card">
+                list.innerHTML += `
+                    <details class="game-card">
                         <summary>
-                            <h3>${game.title}</h3>
-                            <p class="teaser">${game.teaser}</p>
-                            <span class="icon">▾</span>
+                            <img src="${game.img}" class="g-img" onerror="this.src='https://via.placeholder.com/60/222/fff?text=?'">
+                            <div class="g-info">
+                                <h3>${game.title}</h3>
+                                <p>${game.teaser}</p>
+                            </div>
+                            <span class="arrow">▼</span>
                         </summary>
-                        <div class="card-content">
+                        <div class="g-desc">
                             <p>${game.desc}</p>
+                            <a href="${game.url}" target="_blank" class="g-link">${translations[lang]['play-btn']}</a>
                         </div>
-                    </details>
-                `;
+                    </details>`;
             });
         }
-        setLanguage('en'); // Мова при завантаженні
+        setLanguage('uk'); // Старт з української
     </script>
 </body>
 </html>
